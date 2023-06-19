@@ -1,4 +1,4 @@
-export function getRegions(galaxy: string): Set<string> {
+export function getRegions(): Set<string> {
 	const regionGlyphs = [
 		'FA556C30',
 		'FA555C30',

@@ -1,7 +1,6 @@
 import { assignFunction, ElementFunctions } from './elementFunctions';
 import { globalElements } from './elementStore';
 import { getRegions } from './getRegions';
-import { galaxy } from './main';
 
 const validPortalKeys = '0123456789ABCDEF';
 const maxIndex = 767;
@@ -84,7 +83,7 @@ export function checkGlyphs(inputElement: HTMLInputElement, enableLengthCheck: b
 	const systemIndex = glyphs.substring(1, regionGlyphStart);
 	// this removes leading zeros
 	const decSIV = Number('0x' + systemIndex);
-	const regions = getRegions(galaxy);
+	const regions = getRegions();
 
 	const correctLength = glyphs.length == expectedGlyphLength;
 	const regionInCORE = regions.has(regionGlyphs);
@@ -123,7 +122,7 @@ export function checkGlyphs(inputElement: HTMLInputElement, enableLengthCheck: b
 // returns Hub nr
 export function getRegionNum(glyphs: string): number {
 	const regionGlyphs = glyphs.substring(regionGlyphStart);
-	const regArray = Array.from(getRegions(galaxy))
+	const regArray = Array.from(getRegions())
 	const index = regArray.indexOf(regionGlyphs);
 	return index > -1 ? index + 1 : 0;
 }
