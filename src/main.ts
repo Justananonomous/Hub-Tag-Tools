@@ -13,8 +13,8 @@ const systemIndexLength = 3;
 hideMain();
 
 // changes the "other pages" link if on subdomain
-const CoreHosts = ['coretag.nmscore.com', 'core-tag.nmscore.com', 'core-tag-generator.nmscore.com'];
-if (CoreHosts.includes(window.location.host)) (document.querySelector('a[href=".."]') as HTMLAnchorElement).href = 'https://NerdMachine0.github.io/';	// 'https://nmscore.com';
+const COREHosts = ['coretag.nmscore.com', 'core-tag.nmscore.com', 'core-tag-generator.nmscore.com'];
+if (COREHosts.includes(window.location.host)) (document.querySelector('a[href=".."]') as HTMLAnchorElement).href = 'https://NerdMachine0.github.io/';	// 'https://nmscore.com';
 
 // hides the main element if no galaxy is given
 export function hideMain() {
@@ -45,7 +45,7 @@ export function generateTag(): OutputObj {
 	const regionNum = getRegionNum(glyphs);
 	const SIV = getSIV(glyphs);
 	const tag = `[CORE${regionNum}-${SIV}]`;
-	return { status: 'Your Core Tag:', output: tag };
+	return { status: 'Your CORE Tag:', output: tag };
 }
 
 export function decodeTag(): OutputObj {
@@ -54,17 +54,17 @@ export function decodeTag(): OutputObj {
 	const input = tagInputElement.value.replaceAll(/[\[\]]/g, '').replaceAll('68+1', '69').trim();	// NoSonar the escape character is necessary
 	if (!input) return { status: '', output: '' };
 	const regions = Array.from(getRegions(galaxy));
-	const [core, sysIndex] = input.split('-');
-	const regionNum = core.replace('CORE', '');
+	const [CORE, sysIndex] = input.split('-');
+	const regionNum = CORE.replace('CORE', '');
 	const regionIndex = parseInt(regionNum) - 1;
 	const regionCode = regions[regionIndex];
 
-	if (!sysIndex || !regionCode || !core.startsWith('CORE')) {
+	if (!sysIndex || !regionCode || !CORE.startsWith('CORE')) {
 		let errorMessage = '';
 		if (!sysIndex) {
-			errorMessage = 'Invalid Core tag format (missing "-")';
-		} else if (!regionCode || !core.startsWith('Core')) {
-			errorMessage = 'Invalid Core tag format (no "CORE" or wrong region ID)';
+			errorMessage = 'Invalid CORE tag format (missing "-")';
+		} else if (!regionCode || !CORE.startsWith('CORE')) {
+			errorMessage = 'Invalid CORE tag format (no "CORE" or wrong region ID)';
 		}
 		return { status: 'Error:', output: errorMessage };
 	}

@@ -17,4 +17,7 @@ export function getRegions(galaxy: string): Set<string> {
 		'F8557C30',
 		'F8557C2F',
 	];
+
+return new Set(regionGlyphs);
+
 }
