@@ -1,19 +1,5 @@
 export function getRegions(galaxy: string): Set<string> {
 	const regionGlyphs = [
-		'F9556C30',
-		'F9555C30',
-		'F9555C31',
-		'F9556C31',
-		'F9557C31',
-		'F9557C30',
-		'F9557C2F',
-		'F9556C2F',
-		'F9555C2F',
-		'FA556C30',
-		'F8556C30',
-	];
-
-	const EisHubGlyphs = [
 		'FA556C30',
 		'FA555C30',
 		'FA555C31',
@@ -30,10 +16,5 @@ export function getRegions(galaxy: string): Set<string> {
 		'F8557C31',
 		'F8557C30',
 		'F8557C2F',
-		'F8556C2F',
-		'F8555C2F',
 	];
-	if (galaxy == 'Eissentam')
-		regionGlyphs.splice(-2, 2, ...EisHubGlyphs);
-	return new Set(regionGlyphs);
 }
