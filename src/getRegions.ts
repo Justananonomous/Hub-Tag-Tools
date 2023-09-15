@@ -1,39 +1,47 @@
 export function getRegions(galaxy: string): Set<string> {
 	const regionGlyphs = [
-		'F9556C30',
-		'F9555C30',
-		'F9555C31',
-		'F9556C31',
-		'F9557C31',
-		'F9557C30',
-		'F9557C2F',
-		'F9556C2F',
-		'F9555C2F',
-		'FA556C30',
-		'F8556C30',
+		'8191A403',
+		'8191A404',
+		'8191A405',
+		'8191B403',
+		'8191B404',
+		'8191B405',
+		'8191C402',
+		'8191C403',
+		'8191C404',
+		'8191C405',
+		'8191C406',
+		'8191D403',
+		'8191D404',
+		'8191D405',
+		'8291A403',
+		'8291A404',
+		'8291A405',
+		'8291B403',
+		'8291B404',
+		'8291B405',
+		'8291C403',
+		'8291C404',
+		'8291C405',
+		'8291D404',
+		'8391C404',
 	];
+	const EucCoreGlyphs = [
+		'F3556C2D',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+	];
+	if (galaxy == 'Euclid')
+		regionGlyphs.splice(-2, 2, ...EucCoreGlyphs);
 
-	const EisHubGlyphs = [
-		'FA556C30',
-		'FA555C30',
-		'FA555C31',
-		'FA556C31',
-		'FA557C31',
-		'FA557C30',
-		'FA557C2F',
-		'FA556C2F',
-		'FA555C2F',
-		'F8556C30',
-		'F8555C30',
-		'F8555C31',
-		'F8556C31',
-		'F8557C31',
-		'F8557C30',
-		'F8557C2F',
-		'F8556C2F',
-		'F8555C2F',
-	];
-	if (galaxy == 'Eissentam')
-		regionGlyphs.splice(-2, 2, ...EisHubGlyphs);
-	return new Set(regionGlyphs);
+return new Set(regionGlyphs);
+
 }

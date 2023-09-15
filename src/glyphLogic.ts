@@ -87,11 +87,11 @@ export function checkGlyphs(inputElement: HTMLInputElement, enableLengthCheck: b
 	const regions = getRegions(galaxy);
 
 	const correctLength = glyphs.length == expectedGlyphLength;
-	const regionInHub = regions.has(regionGlyphs);
+	const regionInCORE = regions.has(regionGlyphs);
 	const reachable = (decSIV && decSIV < (maxIndex + 1)) as boolean;
 	const isValid = (() => {
 		if (enableLengthCheck || glyphs.length == expectedGlyphLength) {
-			return correctLength && regionInHub && reachable;
+			return correctLength && regionInCORE && reachable;
 		}
 
 		if (glyphs.length != expectedGlyphLength) {
@@ -108,8 +108,8 @@ export function checkGlyphs(inputElement: HTMLInputElement, enableLengthCheck: b
 			return { isValid: false, error: 'Invalid glyph sequence: Incorrect length' };
 		}
 
-		if (!regionInHub) {
-			return { isValid: false, error: 'Invalid glyph sequence: No Hub region' };
+		if (!regionInCORE) {
+			return { isValid: false, error: 'Invalid glyph sequence: No CORE region' };
 		}
 
 		if (!reachable) {

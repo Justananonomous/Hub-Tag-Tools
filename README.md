@@ -1,2 +1,2 @@
-# Hub-Tag-Generator
-Easily generate Hub tags for the Galactic Hub and its sister civs.
+# CORE-Tag-Generator
+Easily generate CORE tags for CORE and its sister civs.
