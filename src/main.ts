@@ -53,7 +53,7 @@ export function decodeTag(): OutputObj {
 	const tagInputElement = globalElements.input![tagInputId] as HTMLInputElement;
 	const input = tagInputElement.value.replaceAll(/[\[\]]/g, '').replaceAll('68+1', '69').trim();	// NoSonar the escape character is necessary
 	if (!input) return { status: '', output: '' };
-	const regions = Array.from(getRegions());
+	const regions = Array.from(getRegions(galaxy));
 	const [CORE, sysIndex] = input.split('-');
 	const regionNum = CORE.replace('CORE', '');
 	const regionIndex = parseInt(regionNum) - 1;

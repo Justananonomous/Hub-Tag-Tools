@@ -1,4 +1,4 @@
-export function getRegions(): Set<string> {
+export function getRegions(galaxy: string): Set<string> {
 	const regionGlyphs = [
 		'8191A403',
 		'8191A404',
@@ -26,6 +26,21 @@ export function getRegions(): Set<string> {
 		'8291D404',
 		'8391C404',
 	];
+	const EucCoreGlyphs = [
+		'F3556C2D',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+	];
+	if (galaxy == 'Euclid')
+		regionGlyphs.splice(-2, 2, ...EucCoreGlyphs);
 
 return new Set(regionGlyphs);
 
